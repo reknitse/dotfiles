@@ -16,7 +16,10 @@ function link_me {
     fi
 }
 
+# Update all submodules
 git submodule update --init --recursive
+vim +PluginInstall +qall
+vim +PluginUpdate +qall
 
 # vim
 link_me vim/vimrc ~/.vimrc

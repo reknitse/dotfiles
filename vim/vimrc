@@ -7,8 +7,6 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -16,38 +14,16 @@ Plugin 'VundleVim/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-" Plugin 'gi1242/vim-tex-autoclose'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'drmingdrmer/xptemplate'
-Plugin 'tomtom/quickfixsigns_vim'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-scripts/restore_view.vim'
 Plugin 'Yggdroot/indentLine'
-Plugin 'ervandew/supertab'
-" Plugin 'Raimondi/delimitMate'
-" Plugin 'cohama/lexima.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/syntastic'
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
 " themes
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'sjl/badwolf'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Avoid a name conflict with L9
-" Plugin 'user/L9', {'name': 'newL9'}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -73,51 +49,6 @@ set guifont=Source\ code\ Pro\ for\ Powerline\ 12
 set visualbell t_vb=    " turn off error beep/flash
 set novisualbell        " turn off visual bell
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => autoclose
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" au FileType tex let b:delimitMate_quotes = "\" ' $"
-" let delimitMate_expand_cr = 1
-" call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': ['latex', 'tex']})
-" call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': ['latex', 'tex']})
-" call lexima#add_rule({'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': ['latex', 'tex']})
-" let g:lexima_enable_space_rules=0
-" call lexima#add_rule({'char': '<cr>', 'at': '\\begin\%#', 'input_after': '\\end'})
-
-let g:xptemplate_key = '<C-Space>'
-" Prevent supertab from mapping <tab> to anything.
-" let g:SuperTabMappingForward = '<Plug>xpt_void'
-"
-" " Tell XPTemplate what to fall back to, if nothing matches.
-" " Original SuperTab() yields nothing if g:SuperTabMappingForward was set to
-" " something it does not know.
-" let g:xptemplate_fallback = '<C-r>=XPTwrapSuperTab("n")<CR>'
-"
-" fun! XPTwrapSuperTab(command) "{{{
-"     let v = SuperTab(a:command)
-"     if v == ''
-"         " Change \<Tab> to whatever you want, when neither XPTemplate or
-"         " supertab needs to do anything.
-"         return "\<Tab>"
-"     else
-"         return v
-"     end
-" endfunction "}}}
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => quickfixsigns
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-au VimEnter * set ballooneval
-" let g:quickfixsigns#vcsdiff#vcs={}
-let g:quickfixsigns_classes=['qfl', 'loc', 'marks', 'longlines', 'breakpoints']
-let g:quickfixsigns#marks#buffer=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-set updatetime=250
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => gitgutter
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi GitGutterAdd term=bold gui=bold cterm=bold ctermfg=green guifg=green
-hi GitGutterChange term=bold gui=bold cterm=bold ctermfg=yellow guifg=yellow
-hi GitGutterDelete term=bold gui=bold cterm=bold ctermfg=red guifg=red
-hi GitGutterChangeDelete term=bold gui=bold cterm=bold ctermfg=red guifg=red
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => restore-vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set viewoptions=cursor,folds,slash,unix
@@ -126,66 +57,20 @@ set rtp+=$HOME/.vim/plugins
 set backup
 set backupdir=~/.vim/backup
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Latex
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:LatexBox_latexmk_options =
-  \ '-pdflatex="pdflatex -synctex=1 %O %S"'
-
-function! SyncTexForward()
-    " let execstr = "silent !okular --unique /home/gregor/Dokumente/masterarbeit/header.pdf\\#src:".line(".")."%:p &"
-    let execstr = "silent !/home/gregor/.vim/scripts/okular_forward_search.sh '%:p:h'  '\\#src:".line(".")."%:p' '%:p:r' &"
-    exec execstr
-    " let execstr = "silent !okular --unique %:p:r.pdf\\#src:".line(".")."%:p &"
-    " let execstr = "silent !vim --servername latex --remote %"
-    " exec execstr
-    redraw!
-endfunction
-
-nmap <Leader>ff :call SyncTexForward()<cr>
-autocmd VimLeave *.tex LatexmkClean
-
-let g:LatexBox_Folding=1
-let g:LatexBox_latexmk_async=1
-let g:LatexBox_latexmk_preview_continuously=1
-let g:LatexBox_quickfix=2
-" let g:LatexBox_build_dir='build'
-au FileType * exec("setlocal dictionary+=".$HOME."/.vim/dictionaries/".expand('<amatch>'))
-au FileType * exec("setlocal dictionary+=".expand('%:p:h')."/*.".expand('%:e'))
-set completeopt=menuone,longest,preview
-set complete+=k
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => NERDTree
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "*",
-    \ "Staged"    : "+",
-    \ "Untracked" : "←",
-    \ "Renamed"   : "→",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "x",
-    \ "Dirty"     : "*",
-    \ "Clean"     : "✓",
-    \ "Unknown"   : "?"
-    \ }
-map <C-n> :NERDTreeToggle<CR>
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => matchit.vim
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-runtime macros/matchit.vim
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => syntastic
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_tex_checkers = ["lacheck"]
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => matchit.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+runtime macros/matchit.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -196,14 +81,6 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 " let g:airline_section_b= '%{airline#util#wrap(getcwd(),0)}%{airline#util#wrap(airline#extensions#hunks#get_hunks(),0)}%{airline#util#wrap(airline#extensions#branch#get_head(),0)}'
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Conceal
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" set cole=2
-" let g:tex_conceal= 'adgm'
-" set concealcursor=
-let g:tex_conceal= ''
-autocmd VimEnter * set concealcursor=ivcn
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -533,12 +410,3 @@ function! <SID>BufcloseCloseIt()
    endif
 endfunction
 
-" if has("terminfo")
-"     let &t_Co=16
-"     let &t_AB="\<Esc>[%?%p1%{8}%<%t%p1%{40}%+%e%p1%{92}%+%;%dm"
-"     let &t_AF="\<Esc>[%?%p1%{8}%<%t%p1%{30}%+%e%p1%{82}%+%;%dm"
-" else
-"     let &t_Co=16
-"     let &t_Sf="\<Esc>[3%dm"
-"     let &t_Sb="\<Esc>[4%dm"
-" endif
