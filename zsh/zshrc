@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/gregor/.oh-my-zsh
 
-ZSH_THEME="agnoster"
+ZSH_THEME="agnoster_colour"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -53,7 +53,14 @@ source ~/.envrc
 source ~/.aliasrc
 source ~/.inputrc
 
-#. /home/gregor/.zsh_comp
+# local settings:
+if [[ -f ~/.zshrc_local ]]; then
+    source ~/.zshrc_local
+else
+    touch ~/.zshrc_local
+    source ~/.zshrc_local
+fi
+
 autoload -U compinit && compinit
 
 # remove duplicates from history

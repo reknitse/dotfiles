@@ -127,13 +127,18 @@ set relativenumber
 
 au WinLeave * :set norelativenumber
 au WinEnter * :set relativenumber
+au WinEnter * :set number
 au BufEnter * :set number
 au BufEnter * :set relativenumber
 au FocusLost * :set norelativenumber
 au FocusGained * :set relativenumber
+au FocusGained * :set number
 
 autocmd InsertEnter * :set norelativenumber
 autocmd InsertLeave * :set relativenumber
+autocmd InsertLeave * :set number
+
+nmap <C-N><C-N> :set invnumber<CR>:set invrelativenumber<CR>
 
 " solve mapping problem
 set nocompatible
@@ -143,7 +148,7 @@ set foldmethod=manual
 " map s :write<CR>
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
-cmap w!! w !sudo tee > /dev/null %
+" cmap w!! w !sudo tee > /dev/null %
 
 " set clipboard=unnamedplus
 
