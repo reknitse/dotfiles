@@ -1,1 +1,7 @@
- 
+
+if [[ -f ~/.local_aliasrc ]]; then
+    source ~/.local_aliasrc
+else
+    touch ~/.local_aliasrc
+    source ~/.local_aliasrc
+fi

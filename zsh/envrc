@@ -1,0 +1,36 @@
+
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/gregor/.local/bin"
+export EDITOR=/usr/bin/vim
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+export DEFAULT_USER="gregor"
+
+# in line search highlight
+export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND="fg=green,bold"
+export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND="fg=red,bold"
+
+# probably for vim ???
+[[ "$TERM" == "xterm" ]] && export TERM=xterm-256color
+
+
+if [[ -f ~/.local_envrc ]]; then
+    source ~/.local_envrc
+else
+    touch ~/.local_envrc
+    source ~/.local_envrc
+fi

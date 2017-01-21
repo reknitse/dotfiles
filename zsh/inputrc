@@ -1,1 +1,7 @@
- 
+
+if [[ -f ~/.local_inputrc ]]; then
+    source ~/.local_inputrc
+else
+    touch ~/.local_inputrc
+    source ~/.local_inputrc
+fi
