@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/gregor/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 ZSH_THEME="agnoster_colour"
 
@@ -22,7 +22,7 @@ ZSH_THEME="agnoster_colour"
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
-# Uncomment the following line to enable command auto-correction.
+# Uncomment the following line to enable command auto-correction.git clone https://github.com/reknitse/dotfiles.git
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
