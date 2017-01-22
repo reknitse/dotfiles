@@ -16,6 +16,7 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'easymotion/vim-easymotion'
 Plugin 'vim-scripts/restore_view.vim'
+Plugin 'tpope/vim-fugitive'
 Plugin 'Yggdroot/indentLine'
 Plugin 'scrooloose/syntastic'
 Plugin 'tomtom/tcomment_vim'
