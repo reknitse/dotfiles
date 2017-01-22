@@ -224,14 +224,6 @@ if has("gui_running")
     set guitablabel=%M\ %t
 endif
 
-" Konsole
-" solid line
-let &t_SI = "\033]50;CursorShape=1\007"
-" solid block
-let &t_EI = "\033]50;CursorShape=0\007"
-" solid block
-let &t_SR = "\033]50;CursorShape=2\007"
-
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
 
@@ -258,7 +250,6 @@ set tw=500
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
-set breakindent
 set showbreak=..
 
 """"""""""""""""""""""""""""""
