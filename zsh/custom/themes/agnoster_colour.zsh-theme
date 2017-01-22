@@ -113,14 +113,10 @@ prompt_context() {
     prompt_segment_without_space black default "@"
   fi
   
-  if [[ ! ("$USER" != "$DEFAULT_USER" && -n "$SSH_CLIENT") ]]; then
+  if [[ -n "$SSH_CLIENT" ]]; then
     if [[ "$USER" == "$DEFAULT_USER" ]]; then
         prompt_segment_without_space black default " "
     fi
-    prompt_segment_without_space black default " "
-  fi
-  
-  if [[ -n "$SSH_CLIENT" ]]; then
     prompt_segment_bold black "$SSH_COLOR" "%m"
   fi
 }
