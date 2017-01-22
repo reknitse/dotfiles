@@ -11,5 +11,7 @@ vim +PluginUpdate +qall
 "$BASEDIR"/link_dotfiles.sh
 
 # zip for work
-rm "$BASEDIR"/work/dotfiles.zip
-zip "$BASEDIR"/work/dotfiles.zip vim zsh work/fonts link_dotfiles.sh -r
+if [[ $1 == "-zip" ]]; then
+    rm "$BASEDIR"/work/dotfiles.zip
+    zip "$BASEDIR"/work/dotfiles.zip vim zsh work/fonts link_dotfiles.sh -r
+fi
