@@ -19,6 +19,9 @@ function link_files {
 # vim
 link_files vim/vimrc ~/.vimrc
 link_files vim/vim ~/.vim
+if [[ ! -d "${BASEDIR}"/vim/vim/backup ]];then
+    mkdir "${BASEDIR}"/vim/vim/backup
+fi
 
 # zsh
 link_files zsh/zshrc ~/.zshrc
