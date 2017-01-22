@@ -3,10 +3,8 @@
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Update all submodules
-git submodule update --init --recursive
-git submodule foreach -q --recursive 'branch="$(git config -f $toplevel/.gitmodules submodule.$name.branch)"; git checkout $branch'
-vim +PluginInstall +qall
-vim +PluginUpdate +qall
+git submodule init
+git submodule update 
 
 "$BASEDIR"/link_dotfiles.sh
 
