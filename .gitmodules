@@ -7,3 +7,45 @@
 [submodule "zsh/custom/plugins/zsh-syntax-highlighting"]
 	path = zsh/custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "vim/vim/pack/plugins/start/ctrlp.vim"]
+	path = vim/vim/pack/plugins/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim
+[submodule "vim/vim/pack/plugins/start/goyo.vim"]
+	path = vim/vim/pack/plugins/start/goyo.vim
+	url = https://github.com/junegunn/goyo.vim
+[submodule "vim/vim/pack/plugins/start/limelight.vim"]
+	path = vim/vim/pack/plugins/start/limelight.vim
+	url = https://github.com/junegunn/limelight.vim
+[submodule "vim/vim/pack/plugins/start/vim-airline"]
+	path = vim/vim/pack/plugins/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule "vim/vim/pack/plugins/start/vim-colors-pencil"]
+	path = vim/vim/pack/plugins/start/vim-colors-pencil
+	url = https://github.com/reedes/vim-colors-pencil
+[submodule "vim/vim/pack/plugins/start/vim-fugitive"]
+	path = vim/vim/pack/plugins/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "vim/vim/pack/plugins/start/vim-pencil"]
+	path = vim/vim/pack/plugins/start/vim-pencil
+	url = https://github.com/reedes/vim-pencil
+[submodule "vim/vim/pack/plugins/start/vim-signify"]
+	path = vim/vim/pack/plugins/start/vim-signify
+	url = https://github.com/mhinz/vim-signify
+[submodule "vim/vim/pack/plugins/start/vim-surround"]
+	path = vim/vim/pack/plugins/start/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "vim/vim/pack/plugins/start/vim-easymotion"]
+	path = vim/vim/pack/plugins/start/vim-easymotion
+	url = https://github.com/easymotion/vim-easymotion
+[submodule "vim/vim/pack/plugins/start/vim-commentary"]
+	path = vim/vim/pack/plugins/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule "vim/vim/pack/plugins/start/vim-repeat"]
+	path = vim/vim/pack/plugins/start/vim-repeat
+	url = https://github.com/tpope/vim-repeat
+[submodule "vim/vim/pack/plugins/start/calendar-vim"]
+	path = vim/vim/pack/plugins/start/calendar-vim
+	url = https://github.com/mattn/calendar-vim
+[submodule "vim/vim/pack/plugins/start/vimwiki"]
+	path = vim/vim/pack/plugins/start/vimwiki
+	url = https://github.com/reknitse/vimwiki
