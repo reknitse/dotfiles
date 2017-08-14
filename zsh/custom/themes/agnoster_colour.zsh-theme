@@ -132,12 +132,16 @@ prompt_git() {
     PL_BRANCH_CHAR=$'\ue0a0'         # 
   }
   local ref dirty mode repo_path
-  repo_path=$(git rev-parse --git-dir 2>/dev/null)
 
   if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
-    dirty=$(parse_git_dirty)
+    repo_path=$(git rev-parse --git-dir 2>/dev/null)
+    if [[ $DISABLE_UNTRACKED_FILES_DIRTY -ne 1 ]]; then
+      dirty=$(parse_git_dirty)
+    fi
     ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git rev-parse --short HEAD 2> /dev/null)"
-    if [[ -n $dirty ]]; then
+    if [[ $DISABLE_UNTRACKED_FILES_DIRTY -eq 1 ]]; then
+      prompt_segment magenta black
+    elif [[ -n $dirty ]]; then
       prompt_segment yellow black
     else
       prompt_segment green black
@@ -151,18 +155,22 @@ prompt_git() {
       mode=" >R>"
     fi
 
-    setopt promptsubst
-    autoload -Uz vcs_info
+    if [[ $DISABLE_UNTRACKED_FILES_DIRTY -ne 1 ]]; then
+      setopt promptsubst
+      autoload -Uz vcs_info
 
-    zstyle ':vcs_info:*' enable git
-    zstyle ':vcs_info:*' get-revision true
-    zstyle ':vcs_info:*' check-for-changes true
-    zstyle ':vcs_info:*' stagedstr '✚'
-    zstyle ':vcs_info:*' unstagedstr '●'
-    zstyle ':vcs_info:*' formats ' %u%c'
-    zstyle ':vcs_info:*' actionformats ' %u%c'
-    vcs_info
-    echo -n "${ref/refs\/heads\//$PL_BRANCH_CHAR }${vcs_info_msg_0_%% }${mode}"
+      zstyle ':vcs_info:*' enable git
+      zstyle ':vcs_info:*' get-revision true
+      zstyle ':vcs_info:*' check-for-changes true
+      zstyle ':vcs_info:*' stagedstr '✚'
+      zstyle ':vcs_info:*' unstagedstr '●'
+      zstyle ':vcs_info:*' formats ' %u%c'
+      zstyle ':vcs_info:*' actionformats ' %u%c'
+      vcs_info
+      echo -n "${ref/refs\/heads\//$PL_BRANCH_CHAR }${vcs_info_msg_0_%% }${mode}"
+    else
+      echo -n "${ref/refs\/heads\//$PL_BRANCH_CHAR }${mode}"
+    fi
   fi
 }
 
@@ -226,12 +234,12 @@ prompt_hg() {
 
 # emulating the Fish shell's default prompt.
 _fishy_collapsed_wd() {
-  echo $(pwd | perl -pe '
+  echo $(pwd | sed "s|$HOME|~|" | perl -pe '
     BEGIN {
       binmode STDIN,  ":encoding(UTF-8)";
       binmode STDOUT, ":encoding(UTF-8)";
     }; 
-    s|^$ENV{HOME}|~|g; s|/([^/.])[^/]*(?=/)|/$1|g; s|/\.([^/])[^/]*(?=/)|/.$1|g
+    s|/([^/.])[^/]*(?=/)|/$1|g; s|/\.([^/])[^/]*(?=/)|/.$1|g
   ')
 }
 
