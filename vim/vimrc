@@ -73,14 +73,20 @@ let g:signify_vcs_list=['git', 'svn']
 """"""""""""""""""""""""""""""""""""""""""""""""""
 set cm=blowfish2
 """"""""""""""""""""""""""""""""""""""""""""""""""
+" Log line to dairy
+""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd VimEnter * nnoremap <leader>ll :.!~/.vim/bin/text2wiki.sh % 1 <CR>
+autocmd VimEnter * vnoremap <leader>ll !~/.vim/bin/text2wiki.sh % 1 <CR>
+autocmd VimEnter * nnoremap <leader>ld :.!~/.vim/bin/text2wiki.sh % 0 <CR> <CR>
+autocmd VimEnter * vnoremap <leader>ld !~/.vim/bin/text2wiki.sh % 0 <CR> <CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pencil
 """"""""""""""""""""""""""""""""""""""""""""""""""
 augroup pencil
   autocmd! 
   autocmd FileType markdown,vimwiki,text call pencil#init({'wrap':'soft'}) 
+  autocmd VimEnter * let g:airline_section_z .= ' %{PencilMode()}'
 augroup END 
-let g:airline_section_x = '%{PencilMode()}'
-let g:pencil#mode_indicators = {'hard': 'H', 'auto': 'A', 'soft': 'S', 'off': '',}
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Vim user interface
 """"""""""""""""""""""""""""""""""""""""""""""""""
