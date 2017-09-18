@@ -55,3 +55,6 @@
 [submodule "vim/vim/pack/plugins/start/supertab"]
 	path = vim/vim/pack/plugins/start/supertab
 	url = https://github.com/ervandew/supertab
+[submodule "vim/vim/pack/plugins/start/syntastic"]
+	path = vim/vim/pack/plugins/start/syntastic
+	url = https://github.com/vim-syntastic/syntastic
