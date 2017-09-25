@@ -51,7 +51,8 @@ exec 2>>( while read X; do print "\e[91m${X}\e[0m" > /dev/tty; done & )
 #########################################################
 #########################################################
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/gregor/.local/bin"
+# export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/gregor/.local/bin"
+export PATH="$HOME/dotfiles/bin:$PATH"
 export EDITOR=/usr/bin/vim
 export SSH_COLOR=yellow
 
