@@ -3,8 +3,7 @@
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Update all submodules
-git submodule init
-git submodule update 
+git submodule update --init --recursive
 
 "$BASEDIR"/link_dotfiles.sh
 

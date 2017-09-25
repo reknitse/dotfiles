@@ -49,3 +49,12 @@
 [submodule "vim/vim/pack/plugins/start/vimwiki"]
 	path = vim/vim/pack/plugins/start/vimwiki
 	url = https://github.com/reknitse/vimwiki
+[submodule "vim/vim/pack/plugins/start/jedi-vim"]
+	path = vim/vim/pack/plugins/start/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim
+[submodule "vim/vim/pack/plugins/start/supertab"]
+	path = vim/vim/pack/plugins/start/supertab
+	url = https://github.com/ervandew/supertab
+[submodule "vim/vim/pack/plugins/start/syntastic"]
+	path = vim/vim/pack/plugins/start/syntastic
+	url = https://github.com/vim-syntastic/syntastic

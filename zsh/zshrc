@@ -48,7 +48,7 @@ source $ZSH/oh-my-zsh.sh
 # stderr in red
 exec 2>>( while read X; do print "\e[91m${X}\e[0m" > /dev/tty; done & )
 
-source ~/.envrc
+source ~/.localrc
 source ~/.aliasrc
 source ~/.inputrc
 
