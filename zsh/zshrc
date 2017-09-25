@@ -42,8 +42,7 @@ COMPLETION_WAITING_DOTS="true"
 ZSH_CUSTOM=$HOME/.zsh/custom
 
 # Which plugins would you like to load?
-plugins=(git zsh-syntax-highlighting perl history per-directory-history history-substring-search-min zsh-completions)
-
+plugins=(git zsh-syntax-highlighting perl history history-substring-search-min zsh-completions)
 source $ZSH/oh-my-zsh.sh
 
 # stderr in red
@@ -62,6 +61,8 @@ else
 fi
 
 autoload -U compinit && compinit
+
+source ~/.oh-my-zsh/plugins/per-directory-history/per-directory-history.zsh
 
 # remove duplicates from history
 setopt HIST_IGNORE_ALL_DUPS
