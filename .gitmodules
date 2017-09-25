@@ -7,54 +7,54 @@
 [submodule "zsh/custom/plugins/zsh-syntax-highlighting"]
 	path = zsh/custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "vim/vim/pack/plugins/start/ctrlp.vim"]
-	path = vim/vim/pack/plugins/start/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim
-[submodule "vim/vim/pack/plugins/start/goyo.vim"]
-	path = vim/vim/pack/plugins/start/goyo.vim
-	url = https://github.com/junegunn/goyo.vim
-[submodule "vim/vim/pack/plugins/start/limelight.vim"]
-	path = vim/vim/pack/plugins/start/limelight.vim
-	url = https://github.com/junegunn/limelight.vim
-[submodule "vim/vim/pack/plugins/start/vim-airline"]
-	path = vim/vim/pack/plugins/start/vim-airline
-	url = https://github.com/vim-airline/vim-airline
-[submodule "vim/vim/pack/plugins/start/vim-colors-pencil"]
-	path = vim/vim/pack/plugins/start/vim-colors-pencil
-	url = https://github.com/reedes/vim-colors-pencil
-[submodule "vim/vim/pack/plugins/start/vim-fugitive"]
-	path = vim/vim/pack/plugins/start/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive
-[submodule "vim/vim/pack/plugins/start/vim-pencil"]
-	path = vim/vim/pack/plugins/start/vim-pencil
-	url = https://github.com/reedes/vim-pencil
-[submodule "vim/vim/pack/plugins/start/vim-signify"]
-	path = vim/vim/pack/plugins/start/vim-signify
-	url = https://github.com/mhinz/vim-signify
-[submodule "vim/vim/pack/plugins/start/vim-surround"]
-	path = vim/vim/pack/plugins/start/vim-surround
-	url = https://github.com/tpope/vim-surround
-[submodule "vim/vim/pack/plugins/start/vim-easymotion"]
-	path = vim/vim/pack/plugins/start/vim-easymotion
-	url = https://github.com/easymotion/vim-easymotion
-[submodule "vim/vim/pack/plugins/start/vim-commentary"]
-	path = vim/vim/pack/plugins/start/vim-commentary
-	url = https://github.com/tpope/vim-commentary
-[submodule "vim/vim/pack/plugins/start/vim-repeat"]
-	path = vim/vim/pack/plugins/start/vim-repeat
-	url = https://github.com/tpope/vim-repeat
-[submodule "vim/vim/pack/plugins/start/calendar-vim"]
-	path = vim/vim/pack/plugins/start/calendar-vim
-	url = https://github.com/mattn/calendar-vim
-[submodule "vim/vim/pack/plugins/start/vimwiki"]
-	path = vim/vim/pack/plugins/start/vimwiki
-	url = https://github.com/reknitse/vimwiki
-[submodule "vim/vim/pack/plugins/start/jedi-vim"]
-	path = vim/vim/pack/plugins/start/jedi-vim
+[submodule "vim/packages/jedi-vim"]
+	path = vim/packages/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim
-[submodule "vim/vim/pack/plugins/start/supertab"]
-	path = vim/vim/pack/plugins/start/supertab
+[submodule "vim/packages/vimwiki"]
+	path = vim/packages/vimwiki
+	url = https://github.com/reknitse/vimwiki
+[submodule "vim/packages/calendar-vim"]
+	path = vim/packages/calendar-vim
+	url = https://github.com/mattn/calendar-vim
+[submodule "vim/packages/ctrlp.vim"]
+	path = vim/packages/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim
+[submodule "vim/packages/goyo.vim"]
+	path = vim/packages/goyo.vim
+	url = https://github.com/junegunn/goyo.vim
+[submodule "vim/packages/limelight.vim"]
+	path = vim/packages/limelight.vim
+	url = https://github.com/junegunn/limelight.vim
+[submodule "vim/packages/supertab"]
+	path = vim/packages/supertab
 	url = https://github.com/ervandew/supertab
-[submodule "vim/vim/pack/plugins/start/syntastic"]
-	path = vim/vim/pack/plugins/start/syntastic
+[submodule "vim/packages/syntastic"]
+	path = vim/packages/syntastic
 	url = https://github.com/vim-syntastic/syntastic
+[submodule "vim/packages/vim-airline"]
+	path = vim/packages/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule "vim/packages/vim-colors-pencil"]
+	path = vim/packages/vim-colors-pencil
+	url = https://github.com/reedes/vim-colors-pencil
+[submodule "vim/packages/vim-commentary"]
+	path = vim/packages/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule "vim/packages/vim-easymotion"]
+	path = vim/packages/vim-easymotion
+	url = https://github.com/easymotion/vim-easymotion
+[submodule "vim/packages/vim-fugitive"]
+	path = vim/packages/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "vim/packages/vim-pencil"]
+	path = vim/packages/vim-pencil
+	url = https://github.com/reedes/vim-pencil
+[submodule "vim/packages/vim-repeat"]
+	path = vim/packages/vim-repeat
+	url = https://github.com/tpope/vim-repeat
+[submodule "vim/packages/vim-signify"]
+	path = vim/packages/vim-signify
+	url = https://github.com/mhinz/vim-signify
+[submodule "vim/packages/vim-surround"]
+	path = vim/packages/vim-surround
+	url = https://github.com/tpope/vim-surround
