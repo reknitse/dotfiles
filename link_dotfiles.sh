@@ -27,7 +27,6 @@ fi
 link_files zsh/zshrc ~/.zshrc
 link_files zsh/aliasrc ~/.aliasrc
 link_files zsh/inputrc ~/.inputrc
-link_files zsh/localrc ~/.localrc
 link_files zsh/oh-my-zsh ~/.oh-my-zsh
 if [[ ! -d ~/.zsh ]]; then
     mkdir ~/.zsh

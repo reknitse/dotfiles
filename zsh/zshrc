@@ -48,9 +48,30 @@ source $ZSH/oh-my-zsh.sh
 # stderr in red
 exec 2>>( while read X; do print "\e[91m${X}\e[0m" > /dev/tty; done & )
 
-source ~/.localrc
+#########################################################
+#########################################################
+
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/gregor/.local/bin"
+export EDITOR=/usr/bin/vim
+export SSH_COLOR=yellow
+
+export DEFAULT_USER="gregor"
+
+# in line search highlight
+export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND="fg=green,bold"
+export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND="fg=red,bold"
+
+# probably for vim ???
+[[ "$TERM" == "xterm" ]] && export TERM=xterm-256color
+
+hash direnv 2>/dev/null && eval "$(direnv hook zsh)"
+#########################################################
+
 source ~/.aliasrc
 source ~/.inputrc
+
+#########################################################
+#########################################################
 
 # local settings:
 if [[ -f ~/.zshrc_local ]]; then
