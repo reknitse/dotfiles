@@ -1,4 +1,4 @@
 vim/vim/backup/**
 vim/vim/undo/**
-vim/vim/pack/plugins/**
+vim/vim/pack/plugins/*
 **/.directory
